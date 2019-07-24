@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="profileVC" id="BYZ-38-t0r" customClass="ProfileViewController" customModule="MVVMArch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-5N-Qf4">
+                                <rect key="frame" x="180.5" y="433" width="53" height="30"/>
+                                <state key="normal" title="Refresh"/>
+                                <connections>
+                                    <action selector="tapRefresh:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7sz-0y-aFZ"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="eHr-pr-aZ7">
+                                <rect key="frame" x="197" y="363" width="20" height="20"/>
+                                <color key="color" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWL-FI-Ops">
+                                <rect key="frame" x="207" y="513" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="d9i-5N-Qf4" firstAttribute="top" secondItem="eHr-pr-aZ7" secondAttribute="bottom" constant="50" id="6oM-3V-NVc"/>
+                            <constraint firstItem="eHr-pr-aZ7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lL8-0d-xHi"/>
+                            <constraint firstItem="pWL-FI-Ops" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pVZ-1i-PSF"/>
+                            <constraint firstItem="pWL-FI-Ops" firstAttribute="top" secondItem="d9i-5N-Qf4" secondAttribute="bottom" constant="50" id="pXr-PI-Wen"/>
+                            <constraint firstItem="d9i-5N-Qf4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rp0-HY-n7g"/>
+                            <constraint firstItem="d9i-5N-Qf4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="zUP-eQ-Jt8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicatorRefresh" destination="eHr-pr-aZ7" id="v5r-N9-dHJ"/>
+                        <outlet property="btnRefresh" destination="d9i-5N-Qf4" id="5hl-bz-fdN"/>
+                        <outlet property="lblProfile" destination="pWL-FI-Ops" id="HMQ-ii-RwO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
