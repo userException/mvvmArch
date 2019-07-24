@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var activityIndicatorRefresh: UIActivityIndicatorView!
     @IBOutlet weak var lblProfile: UILabel!
     
-    public var profileBridge: ProfileViewModel? = nil
+    public var profileBridge: ProfileViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()

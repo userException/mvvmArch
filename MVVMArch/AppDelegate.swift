@@ -18,9 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let profileVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
         
-        let profileServiceClient = ProfileServices()
-        
-        let profileBridge = ProfileViewModel(with: profileServiceClient)
+        let profileBridge = ProfileViewModel()
         
         profileVC.profileBridge = profileBridge
         

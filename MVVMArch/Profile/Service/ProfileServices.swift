@@ -7,13 +7,8 @@
 
 import Foundation
 
-protocol ProfileWebHooks {
-    
-    func fetchProfileData(completion: @escaping (Result<(Profile?,URLResponse?), Error>) -> Void)
-}
 
-
-class ProfileServices: ProfileWebHooks{
+class ProfileServices{
     
     func fetchProfileData(completion: @escaping (Result<(Profile?,URLResponse?), Error>) -> Void){
         
