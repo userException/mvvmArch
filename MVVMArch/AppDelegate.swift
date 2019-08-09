@@ -18,10 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let profileVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "profileVC") as! ProfileViewController
         
-        let profileBridge = ProfileViewModel()
-        
-        profileVC.profileBridge = profileBridge
-        
         window = UIWindow.init(frame: UIScreen.main.bounds)
         
         window?.rootViewController = profileVC

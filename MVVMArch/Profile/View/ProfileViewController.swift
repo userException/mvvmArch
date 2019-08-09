@@ -13,7 +13,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var activityIndicatorRefresh: UIActivityIndicatorView!
     @IBOutlet weak var lblProfile: UILabel!
     
-    public var profileBridge: ProfileViewModel?
+    public var profileBridge = ProfileViewModel ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,14 +24,14 @@ class ProfileViewController: UIViewController {
         
         updateUIState(inProgress: true)
         
-        profileBridge?.refresh(completion: { (apiError) in
+        profileBridge.refresh(completion: { (apiError) in
             
             self.updateUIState(inProgress: false)
             
             if let apiError = apiError{
                 self.lblProfile.text = apiError.localizedDescription
             }else{
-                self.updateUIData()
+                self.updateUIWithData()
             }
         })
     }
@@ -50,8 +50,8 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func updateUIData(){
-        lblProfile.text = profileBridge?.name
+    func updateUIWithData(){
+        lblProfile.text = profileBridge.name
     }
     
 }
