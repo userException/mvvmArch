@@ -24,11 +24,11 @@ class ProfileViewController: UIViewController {
         
         updateUIState(inProgress: true)
         
-        profileBridge.refresh(completion: { (apiError) in
+        profileBridge.refresh(completion: { (error) in
             
             self.updateUIState(inProgress: false)
             
-            if let apiError = apiError{
+            if let apiError = error{
                 self.lblProfile.text = apiError.localizedDescription
             }else{
                 self.updateUIWithData()
