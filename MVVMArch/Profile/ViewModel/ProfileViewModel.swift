@@ -20,8 +20,15 @@ class ProfileViewModel{
     }
     
     
-    //MARK:- Services
+    //MARK:- Public Access
     func refresh(completion: @escaping (Error?) -> Void){
+        getProfileData { (error) in
+            completion(error)
+        }
+    }
+    
+    //MARK:- Private Access
+    fileprivate func getProfileData(completion: @escaping (Error?) -> Void){
         webHook.fetchProfileData { result in
             
             DispatchQueue.main.async {
@@ -31,7 +38,7 @@ class ProfileViewModel{
                 case .success(let profileData, _):
                     if let profileData = profileData{
                         self.profile = profileData
-                        self.name = profileData.name.uppercased()
+                        self.name = profileData.name
                     }
                     completion(nil)
                     
@@ -42,5 +49,4 @@ class ProfileViewModel{
             }
         }
     }
-    
 }
